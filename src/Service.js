@@ -2,17 +2,15 @@ import { default as React, PropTypes } from 'react'
 import { Flex } from 'reflexbox'
 import { Heading } from 'rebass'
 
-const serviceSize = 275
-
-const Service = ({ img, name }) =>
+const Service = ({ img, name, size }) =>
     <Flex
         align="flex-end"
         m={1}
         style={{
             backgroundImage: `url('${img}')`,
             backgroundSize: 'cover',
-            height: serviceSize,
-            width: serviceSize
+            height: size,
+            width: size
         }}
     >
         <Heading
@@ -30,7 +28,12 @@ const Service = ({ img, name }) =>
 
 Service.propTypes = {
     img: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    size: PropTypes.number.isRequired
+}
+
+Service.defaultProps = {
+    size: 250
 }
 
 export default Service

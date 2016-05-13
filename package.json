@@ -1,6 +1,6 @@
 {
   "name": "@leadgrabr/services",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "list or display single services offered",
   "main": "dist/index.js",
   "scripts": {
@@ -8,12 +8,18 @@
     "prebuild": "rm -rf dist",
     "build": "babel -d dist/ src/",
     "prepublish": "npm run lint && npm run build",
-    "test": "npm run lint; mocha test --compilers js:babel-register"
+    "test": "npm run lint; mocha spec --compilers js:babel-register"
   },
   "author": "https://github.com/bentatum",
   "license": "ISC",
   "eslintConfig": {
     "parser": "babel-eslint"
+  },
+  "peerDependencies": {
+    "react": "^15.0.2",
+    "react-router": "^2.4.0",
+    "rebass": "^0.2.6",
+    "reflexbox": "^1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.8.0",
@@ -28,6 +34,8 @@
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-jsx-control-statements": "^2.1.1",
     "eslint-plugin-react": "^5.0.1",
-    "jsx-control-statements": "^3.1.2"
+    "expect": "^1.20.1",
+    "jsx-control-statements": "^3.1.2",
+    "react-addons-test-utils": "^15.0.2"
   }
 }
